@@ -28,10 +28,10 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
         if (error){
             msg = "Oops, looks like SUSI is taking a break, She will be back soon";
             rtm.sendMessage(msg, channel);
-        } else if(message.text != " "|| message.text != ""){
+        } else {
             var type = (JSON.parse(body)).answers[0].actions;
 		    var msg;
-            if (type.length == 1 && type[0].type == "answer") {
+            if (type.length == 1 && type[0].type == "answer" && message.text != "" && message.text != " ") {
                 msg = (JSON.parse(body)).answers[0].actions[0].expression;
                 rtm.sendMessage(msg, channel);
             } else if (type.length == 1 && type[0].type == "table") {
