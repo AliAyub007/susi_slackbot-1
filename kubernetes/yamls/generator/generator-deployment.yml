@@ -14,8 +14,8 @@ spec:
       - name: susi-slackbot
         image: aliayubkhan/susi_slackbot:latest
         env:
-        - name: X_VIBER_AUTH_TOKEN
-          value: "45a53f0fcb325002-41552d1f93cd0d0f-1a8d7fa78758d158"
+        - name: slackToken
+          value: "xoxb-185920210817-emzvFPZLXIVEIRcGMeFIagW9"
         ports:
         - containerPort: 8080
           protocol: TCP
