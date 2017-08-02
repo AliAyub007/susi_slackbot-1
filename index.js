@@ -7,7 +7,7 @@ var app = express();
 var RtmClient = Slack.RtmClient;
 var RTM_EVENTS = Slack.RTM_EVENTS;
 
-var token = process.env.token;
+var token = process.env.slackToken||config.slackToken;
 
 var rtm = new RtmClient(token, { logLevel: 'info' });
 rtm.start();
@@ -67,7 +67,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
     })
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
     console.log(`listening on ${port}`);
 });
