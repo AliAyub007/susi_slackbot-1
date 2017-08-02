@@ -1,4 +1,4 @@
-export DEPLOY_BRANCH=${DEPLOY_BRANCH:-master}
+export DEPLOY_BRANCH=${DEPLOY_BRANCH:-development}
 
 export REPOSITORY="https://github.com/${TRAVIS_REPO_SLUG}.git"
 
