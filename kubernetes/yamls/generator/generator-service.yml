@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: susi-vslackbot
+  name: susi-slackbot
   namespace: slackbot
 spec:
   ports:
