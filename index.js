@@ -6,7 +6,6 @@ var app = express();
 
 var RtmClient = Slack.RtmClient;
 var RTM_EVENTS = Slack.RTM_EVENTS;
-app.set('port', (process.env.PORT || 8080));
 
 var token = process.env.slackToken||config.slackToken;
 
@@ -60,7 +59,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
                     msg = "";
                     msg =key[1].toUpperCase() + ": " + data[i][key[1]] + "\n" + key[2].toUpperCase() + ": " + data[i][key[2]] + "\n" + key[3].toUpperCase() + ": " + data[i][key[3]];
                     rtm.sendMessage(msg, channel);
-                    console.log("check");
+                                    console.log("check");
                 }
                 }
             }
@@ -68,6 +67,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
     })
 });
 
-app.listen(app.get('port'), function() {
-	console.log('running on port', app.get('port'));
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+    console.log(`listening on ${port}`);
 });
