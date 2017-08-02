@@ -24,5 +24,5 @@ docker build --build-arg COMMIT_HASH=$TRAVIS_COMMIT --build-arg BRANCH=$DEPLOY_B
 docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 docker tag aliayubkhan/susi_slackbot:$TRAVIS_COMMIT aliayubkhan/susi_slackbot:latest-$DEPLOY_BRANCH
 docker push aliayubkhan/susi_slackbot
-kubectl set image deployment/susi-viberbot --namespace=slackbot susi-slackbot=aliayubkhan/susi_slackbot:$TRAVIS_COMMIT
+kubectl set image deployment/susi-slackbot --namespace=slackbot susi-slackbot=aliayubkhan/susi_slackbot:$TRAVIS_COMMIT
 rm -rf $GOOGLE_APPLICATION_CREDENTIALS
