@@ -5,7 +5,7 @@ ARG BRANCH
 ARG REPOSITORY
 
 ENV COMMIT_HASH ${COMMIT_HASH:-null}
-ENV BRANCH ${BRANCH:-master}
+ENV BRANCH ${BRANCH:-development}
 ENV REPOSITORY ${REPOSITORY:-https://github.com/AliAyub007/susi_slackbot-1.git}
 ENV INSTALL_PATH /slack
 

@@ -12,10 +12,7 @@ spec:
     spec:
       containers:
       - name: susi-slackbot
-        image: aliayubkhan/susi_slackbot:latest
-        env:
-        - name: slackToken
-          value: "xoxb-185920210817-emzvFPZLXIVEIRcGMeFIagW9"
+        image: aliayubkhan/susi_slackbot:latest-development
         ports:
         - containerPort: 8080
           protocol: TCP

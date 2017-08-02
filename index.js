@@ -28,7 +28,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
         if (error){
             msg = "Oops, looks like SUSI is taking a break, She will be back soon";
             rtm.sendMessage(msg, channel);
-        } else {
+        } else if(message.text != " "|| message.text != ""){
         
             var type = (JSON.parse(body)).answers[0].actions;
 		    var msg;
