@@ -1,13 +1,13 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: slack
-  namespace: slack
+  name: susi-slackbot
+  namespace: slackbot
 spec:
   ports:
   - port: 8080
     protocol: TCP
     targetPort: 8080
   selector:
-    app: slack
-  type: LoadBalancer 
+    app: susi-slackbot
+  type: LoadBalancer
