@@ -1,17 +1,17 @@
 kind: Deployment
 apiVersion: apps/v1beta1
 metadata:
-  name: susi-slackbot
+  name: slack
   namespace: slack
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: susi-slackbot
+        app: slack
     spec:
       containers:
-      - name: susi-slackbot
+      - name: slack
         image: aliayubkhan/susi_slackbot:latest
         env:
         - name: slackToken
@@ -21,5 +21,5 @@ spec:
           protocol: TCP
         envFrom:
         - configMapRef:
-            name: susi-slackbot
+            name: slack
       restartPolicy: Always
