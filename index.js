@@ -68,6 +68,6 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
     })
 });
 
-app.listen(port, () => {
-    console.log(`listening on ${port}`);
+app.listen(app.get('port'), function() {
+	console.log('running on port', app.get('port'));
 });
